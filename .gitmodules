@@ -4,3 +4,6 @@
 [submodule "modules/inspect"]
 	path = modules/inspect
 	url = https://github.com/kikito/inspect.lua
+[submodule "modules/push"]
+	path = modules/push
+	url = https://github.com/Ulydev/push
