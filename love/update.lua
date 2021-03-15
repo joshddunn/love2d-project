@@ -3,5 +3,5 @@ function love.update(dt)
     love.timer.sleep(1 / 60 - dt)
   end
 
-  global.view_manager:update(dt)
+  global.view_manager:send_event('update', dt)
 end

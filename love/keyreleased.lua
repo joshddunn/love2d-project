@@ -1,3 +1,3 @@
 function love.keyreleased(key)
-  global.view_manager:keyreleased(key)
+  global.view_manager:send_event('keyreleased', key)
 end

@@ -3,5 +3,5 @@ function love.keypressed(key)
     love.event.quit()
   end
 
-  global.view_manager:keypressed(key)
+  global.view_manager:send_event('keypressed', key)
 end
