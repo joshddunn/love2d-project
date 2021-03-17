@@ -1,10 +1,6 @@
-View = {}
-View.__index = View
+View = class()
 
-function View:new(mode)
-  local self = {}
-  setmetatable(self, View)
-
+function View:init(mode)
   self.mode = mode
   self.draw = function(self) return nil end
   self.mousepressed = function(self, x, y, button, is_touch, presses) return nil end
@@ -19,8 +15,6 @@ function View:new(mode)
   self.texts = {}
   self.props = {}
   self.scroll = 0
-
-  return self
 end
 
 function View:draw_func()

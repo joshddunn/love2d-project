@@ -1,10 +1,6 @@
-Dev = {}
-Dev.__index = Dev
+Dev = class()
 
-function Dev:new(vertical, horizontal)
-  local self = {}
-  setmetatable(self, Dev)
-
+function Dev:init(vertical, horizontal)
   self.visible = false
   self.height = 75
   self.width = 170
@@ -24,8 +20,6 @@ function Dev:new(vertical, horizontal)
   self.x = x_coords[horizontal]
   self.y = y_coords[vertical]
   self.font = love.graphics.newFont(11)
-
-  return self
 end
 
 function Dev:draw()

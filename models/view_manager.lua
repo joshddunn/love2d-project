@@ -1,15 +1,9 @@
-ViewManager = {}
-ViewManager.__index = ViewManager
+ViewManager = class()
 
-function ViewManager:new(mode)
-  local self = {}
-  setmetatable(self, ViewManager)
-
+function ViewManager:init(mode)
   self.mode = mode
   self.previous_mode = nil
   self.views = {}
-
-  return self
 end
 
 function ViewManager:send_event(event, ...)
