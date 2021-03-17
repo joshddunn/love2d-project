@@ -26,11 +26,10 @@ end
 function View:draw_func()
   self:draw()
 
-  local mouse_x = love.mouse.getX()
-  local mouse_y = love.mouse.getY()
+  local gx, gy = push:toGame(love.mouse.getX(), love.mouse.getY())
 
   lume.each(self.buttons, function(button)
-    button:draw(mouse_x, mouse_y, self.scroll)
+    button:draw(gx, gy, self.scroll)
   end)
 
   lume.each(self.texts, function(text)
@@ -39,22 +38,23 @@ function View:draw_func()
 end
 
 function View:mousepressed_func(x, y, button, is_touch, presses)
-  self:mousepressed(x, y, button, is_touch, presses)
-
-  local mouse_x = love.mouse.getX()
-  local mouse_y = love.mouse.getY()
+  local gx, gy = push:toGame(x, y)
+  self:mousepressed(gx, gy, button, is_touch, presses)
 
   lume.each(self.buttons, function(button)
-    button:click(mouse_x, mouse_y)
+    button:click(gx, gy)
   end)
 end
 
 function View:mousereleased_func(x, y, button, is_touch, presses)
-  self:mousereleased(x, y, button, is_touch, presses)
+  local gx, gy = push:toGame(x, y)
+  self:mousereleased(gx, gy, button, is_touch, presses)
 end
 
 function View:mousemoved_func(x, y, dx, dy, is_touch)
-  self:mousemoved(x, y, dx, dy, is_touch)
+  local gx, gy = push:toGame(x, y)
+  local gdx, gdy = push:toGame(dx, dy)
+  self:mousemoved(gx, gy, gdx, gdy, is_touch)
 end
 
 function View:keypressed_func(key)

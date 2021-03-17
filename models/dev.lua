@@ -11,14 +11,14 @@ function Dev:new(vertical, horizontal)
 
   local x_coords = {
     left = 0,
-    middle = (love.graphics.getWidth() - self.width) / 2,
-    right = love.graphics.getWidth() - self.width
+    middle = (push:getWidth() - self.width) / 2,
+    right = push:getWidth() - self.width
   }
 
   local y_coords = {
     top = 0,
-    middle = (love.graphics.getHeight() - self.height) / 2,
-    bottom = love.graphics.getHeight() - self.height
+    middle = (push:getHeight() - self.height) / 2,
+    bottom = push:getHeight() - self.height
   }
 
   self.x = x_coords[horizontal]
