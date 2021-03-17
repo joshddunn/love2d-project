@@ -1,4 +1,3 @@
--- submodules
 for _, module in ipairs(love.filesystem.getDirectoryItems("modules")) do
   _G[module] = require("modules." .. module .. "." .. module)
 end
