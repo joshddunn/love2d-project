@@ -12,9 +12,9 @@ function ViewManager:new(mode)
   return self
 end
 
-function ViewManager:send_event(event, args)
+function ViewManager:send_event(event, ...)
   local view = self.views[self.mode]
-  view[event .. "_func"](view, args)
+  view[event .. "_func"](view, ...)
 end
 
 function ViewManager:load()
