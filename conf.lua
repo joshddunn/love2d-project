@@ -4,6 +4,6 @@ function love.conf(t)
   t.window.title = "Love2D Project"
   t.window.resizable = false
   t.window.vsync = false
-  t.window.width = 1440
-  t.window.height = 810
+  t.window.width = 480 * 3
+  t.window.height = 270 * 3
 end
