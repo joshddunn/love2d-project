@@ -39,6 +39,7 @@ end
 
 function View:mousepressed_func(x, y, button, is_touch, presses)
   local gx, gy = push:toGame(x, y)
+
   self:mousepressed(gx, gy, button, is_touch, presses)
 
   lume.each(self.buttons, function(button)
@@ -48,12 +49,14 @@ end
 
 function View:mousereleased_func(x, y, button, is_touch, presses)
   local gx, gy = push:toGame(x, y)
+
   self:mousereleased(gx, gy, button, is_touch, presses)
 end
 
 function View:mousemoved_func(x, y, dx, dy, is_touch)
   local gx, gy = push:toGame(x, y)
   local gdx, gdy = push:toGame(dx, dy)
+
   self:mousemoved(gx, gy, gdx, gdy, is_touch)
 end
 
