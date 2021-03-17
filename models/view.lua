@@ -22,11 +22,11 @@ function View:draw_func()
 
   local gx, gy = push:toGame(love.mouse.getX(), love.mouse.getY())
 
-  lume.each(self.buttons, function(button)
+  std.each(self.buttons, function(button)
     button:draw(gx, gy, self.scroll)
   end)
 
-  lume.each(self.texts, function(text)
+  std.each(self.texts, function(text)
     text:draw()
   end)
 end
@@ -36,7 +36,7 @@ function View:mousepressed_func(x, y, button, is_touch, presses)
 
   self:mousepressed(gx, gy, button, is_touch, presses)
 
-  lume.each(self.buttons, function(button)
+  std.each(self.buttons, function(button)
     button:click(gx, gy)
   end)
 end
@@ -75,9 +75,9 @@ function View:load_func()
 end
 
 function View:add_button(button)
-  lume.push(self.buttons, button)
+  std.push(self.buttons, button)
 end
 
 function View:add_text(text)
-  lume.push(self.texts, text)
+  std.push(self.texts, text)
 end

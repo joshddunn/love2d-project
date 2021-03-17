@@ -12,7 +12,7 @@ function ViewManager:send_event(event, ...)
 end
 
 function ViewManager:load()
-  lume.each(love.filesystem.getDirectoryItems("views"), function(view)
+  std.each(love.filesystem.getDirectoryItems("views"), function(view)
     local view_mode = view:gsub(".lua", "")
     self:add_view(require("views." .. view_mode))
     self.views[view_mode]:load_func()
