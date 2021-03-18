@@ -1,4 +1,4 @@
-Dev = class()
+class("Dev")
 
 function Dev:init(vertical, horizontal)
   self.visible = false

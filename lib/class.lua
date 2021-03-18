@@ -1,15 +1,23 @@
-function class()
-  local klass = {}
-  klass.__index = klass
+function class(name, parent)
+  _G[name] = {}
+  _G[name].__index = _G[name]
 
-  klass.new = function(self, ...)
+  _G[name].init = function(self, ...) end
+
+  _G[name].new = function(self, ...)
     local self = {}
-    setmetatable(self, klass)
+    setmetatable(self, _G[name])
 
-    klass.init(self, ...)
+    self._type = name
+
+    _G[name].init(self, ...)
 
     return self
   end
 
-  return klass
+  if parent then
+    setmetatable(_G[name], { __index = _G[parent] })
+  end
+
+  return _G[name]
 end

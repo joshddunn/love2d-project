@@ -1,4 +1,4 @@
-View = class()
+class("View")
 
 function View:init(mode)
   self.mode = mode

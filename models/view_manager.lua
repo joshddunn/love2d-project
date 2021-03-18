@@ -1,4 +1,4 @@
-ViewManager = class()
+class("ViewManager")
 
 function ViewManager:init(mode)
   self.mode = mode
