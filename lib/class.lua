@@ -9,8 +9,7 @@ function class(name, parent)
     setmetatable(self, _G[name])
 
     self._type = name
-
-    _G[name].init(self, ...)
+    self:init(...)
 
     return self
   end
