@@ -35,6 +35,4 @@ function class(name, parent)
   if parent then
     setmetatable(_G[name], { __index = _G[parent] })
   end
-
-  return _G[name]
 end
